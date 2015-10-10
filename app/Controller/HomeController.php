@@ -116,7 +116,11 @@ class HomeController extends AppController{
                     }
 
                     $update = $this->Update->find('first',array('fields'=>array('created'),'order'=>array('created desc')));
-                    $last_updated = $update['Update']['created'];
+                    if ($update){
+                        $last_updated = $update['Update']['created'];
+                    }else{
+                        $last_updated = NULL;
+                    }
                     $result = array('last_updated'=>$last_updated, 'content'=>$out);
                     Cache::write($keycache, $result, 'memcache');
 
