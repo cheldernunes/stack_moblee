@@ -372,16 +372,16 @@ if (Configure::read('debug') > 0) {
 // Prefix each application on the same server with a different string, to avoid Memcache and APC conflicts.
 $prefix = 'myapp_';
 
-//
-//Cache::config('memcache', array(
-//		'engine' => 'Memcached',
-//		'duration' => 3600,
-//		'probability' => 100,
-// 		'servers' => array(
-// 			'127.0.0.1:11211'
-// 		),
-// 		'compress' => false, // [optional] compress data in Memcached (slower, but uses less memory)
-//));
+
+Cache::config('memcache', array(
+		'engine' => 'Memcached',
+		'duration' => 3600,
+		'probability' => 100,
+ 		'servers' => array(
+ 			'127.0.0.1:11211'
+ 		),
+ 		'compress' => false, // [optional] compress data in Memcached (slower, but uses less memory)
+));
 
 /**
  * Configure the cache used for general framework caching. Path information,
