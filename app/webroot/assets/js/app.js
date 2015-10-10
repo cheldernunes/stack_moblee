@@ -19,7 +19,7 @@ angular.module('app',['ngSanitize'])
                 $http({method: 'GET', url: '/home/saveLastUpdate'});
             }
 
-            if (page<=100){ // num requests
+            if (page<=1000){ // num requests
                     $http({
                         method: 'POST',
                         url: '/sync/'+page
